@@ -21,22 +21,22 @@
   --tran-04: all 0.4s ease;
   --tran-05: all 0.5s ease;
 }
-body {
-  /* height: 100vh; */
-  background: var(--body-color);
-}
+
 .altBody {
   height: 100%;
   background: var(--body-color);
   transition: var(--tran-05);
 }
-.altBody.dark {
+.altBody.dark, body.dark {
   --body-color: #18191a;
   --sidebar-color: #242526;
   --primary-color: #3a3b3c;
   --primary-color-light: #3a3b3c;
   --toggle-color: #fff;
   --text-color: #ccc;
+}body {
+  /* height: 100vh; */
+  background: var(--body-color);
 }
 /* ___________ SIDEBAR _____________ */
 
@@ -303,9 +303,9 @@ header .image-text .header-text {
 main.table {
   width: 80vw;
   height: 80vh;
-  background-color: #fff5;
+  background-color:var(--body-color);
   /* backdrop-filter: blur(7px); */
-  box-shadow: 0 8px 14px #0005;
+  /* box-shadow: 0 8px 14px #0005; */
   border-radius: 14px;
 }
 

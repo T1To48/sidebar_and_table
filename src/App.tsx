@@ -7,6 +7,8 @@ function App() {
   const [modeStr, setModeStr] = useState("Dark Mode")
   const handleSwitchMode=()=>{
     const newVal=mode===""?"dark":"";
+    const body=document.querySelector("body");
+body?.classList.toggle("dark")
     const newStrVal=mode===""?"Dark Mode":"Light Mode"
     setMode(newVal)
     setModeStr(newStrVal)
@@ -15,11 +17,9 @@ function App() {
 
   return (
     <div className={`${mode} altBody`}>
-      <Sidebar switchMode={handleSwitchMode} mode={modeStr} />
-      <div className="home">
+      <Sidebar switchMode={handleSwitchMode} modeStr={modeStr} mode={mode} />
         {/* <div className="text">Dashboard</div> */}
          <Table />
-      </div>
      
     </div>
   )

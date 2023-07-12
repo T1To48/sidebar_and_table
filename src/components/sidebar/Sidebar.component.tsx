@@ -2,7 +2,7 @@ import { useState } from "react";
 import SidebarFooter from "./Sidebar.footer";
 import SidebarHeader from "./Sidebar.header";
 import SideBarMenu from "./Sidebar.menu";
-const Sidebar = ({switchMode,mode}:{switchMode:()=>void,mode:string}) => {
+const Sidebar = ({switchMode,mode,modeStr}:{switchMode:()=>void,mode:string,modeStr:string}) => {
 const [sidebarStatus, setSidebarStatus] = useState("close")
 
   const toggleSidebar=()=>{
@@ -11,10 +11,10 @@ const [sidebarStatus, setSidebarStatus] = useState("close")
   }
   return (
     <nav className={`sidebar ${sidebarStatus}`}>
-      <SidebarHeader toggleSidebar={toggleSidebar} />
+      <SidebarHeader toggleSidebar={toggleSidebar} mode={mode}  />
       <div className="menu-bar">
       <SideBarMenu openSideBar={()=>setSidebarStatus("")} />
-      <SidebarFooter switchMode={switchMode} mode={mode} />
+      <SidebarFooter switchMode={switchMode} mode={modeStr} />
       </div>
     </nav>
   );
